@@ -85,7 +85,7 @@ table 50101 "CSD Seminar"
             Editable = false;
             FieldClass = FlowField;
             //CalcFormula = Exist ("Sales Comment Line" WHERE (Document Type=FIELD(Document Type),No.=FIELD(No.),Document Line No.=CONST(0)))
-            //CalcFormula=exist("CSD Seminar Comment Line" where("Table Name"= const("Seminar"),"No."=Field("No.")));
+            CalcFormula = exist ("CSD Seminar Comment Line" where ("Table Name" = const ("Seminar"), "No." = Field ("No.")));
 
         }
         field(100; "Seminar Price"; Decimal)
@@ -147,7 +147,7 @@ table 50101 "CSD Seminar"
 
     var
         SeminarSetup: Record "CSD Seminar Setup";
-        //CommentLine : record "CSD Seminar Comment Line";
+        CommentLine: record "CSD Seminar Comment Line";
         Seminar: Record "CSD Seminar";
         GenProdPostingGroup: Record "Gen. Product Posting Group";
         NoSeriesMgt: Codeunit NoSeriesManagement;
@@ -169,11 +169,11 @@ table 50101 "CSD Seminar"
 
     trigger OnDelete()
     begin
-        //CommentLine.Reset;
-        //CommentLine.SetRange("Table Name",
-        //CommentLine."Table Name"::Seminar);
-        //CommentLine.SetRange("No.","No.");
-        // CommentLine.DeleteAll;
+        CommentLine.Reset;
+        CommentLine.SetRange("Table Name",
+       CommentLine."Table Name"::Seminar);
+        CommentLine.SetRange("No.", "No.");
+        CommentLine.DeleteAll;
     end;
 
     trigger OnRename()
@@ -181,7 +181,7 @@ table 50101 "CSD Seminar"
         "Last Date Modified" := Today;
     end;
 
-    local procedure AssistEdit(): boolean;
+    procedure AssistEdit(): boolean;
     begin
         with Seminar do begin
             Seminar := Rec;
