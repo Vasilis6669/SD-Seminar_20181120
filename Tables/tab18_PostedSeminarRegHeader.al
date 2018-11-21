@@ -151,6 +151,7 @@ table 50118 "CSD Posted Seminar Reg. Header"
             Caption = 'Source Code';
             TableRelation = "Source Code";
         }
+
     }
 
     keys
