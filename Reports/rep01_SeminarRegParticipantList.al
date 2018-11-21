@@ -2,7 +2,7 @@ report 50101 "CSD SeminarRegParticipantList"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
-    RDLCLayout = '‘./Layouts/SeminarRegParticipantList.rdl';
+    RDLCLayout = './Layouts/SeminarRegParticipantList.rdl';
     Caption = 'Seminar Reg.- Participant List';
     DefaultLayout = RDLC;
 
@@ -53,16 +53,16 @@ report 50101 "CSD SeminarRegParticipantList"
                 DataItemLink = "Document No." = field ("No.");
                 column(Bill_to_Customer_No_; "Bill-to Customer No.")
                 {
-
+                    IncludeCaption = true;
                 }
 
                 column(Participant_Contact_No_; "Participant Contact No.")
                 {
-
+                    IncludeCaption = true;
                 }
                 column(Participant_Name; "Participant Name")
                 {
-
+                    IncludeCaption = true;
                 }
 
             }
