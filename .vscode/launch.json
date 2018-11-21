@@ -8,9 +8,12 @@
             "server": "http://localhost",
             "serverInstance": "BC130",
             "authentication": "Windows",
-            "schemaUpdateMode": "Recreate",
+            "schemaUpdateMode": "Synchronize", //Recreate",
             "breakOnError": true,
-            "port": 7049
+            "port": 7049//,
+            //"startupObjectType": "Table",
+            //"startupObjectId": 18
+
         }   
     ]
 }

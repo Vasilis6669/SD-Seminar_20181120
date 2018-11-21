@@ -5,6 +5,7 @@ report 50101 "CSD SeminarRegParticipantList"
     RDLCLayout = './Layouts/SeminarRegParticipantList.rdl';
     Caption = 'Seminar Reg.- Participant List';
     DefaultLayout = RDLC;
+    PreviewMode = PrintLayout;
 
 
 
